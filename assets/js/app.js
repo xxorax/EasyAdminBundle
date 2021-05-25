@@ -301,8 +301,8 @@ const App = (() => {
 
                     const batchFormFields = {
                         'batchActionName': actionElement.getAttribute('data-action-name'),
-                        'batchActionUrl': actionElement.getAttribute('data-action-url'),
                         'entityFqcn': actionElement.getAttribute('data-entity-fqcn'),
+                        'batchActionUrl': actionElement.getAttribute('data-action-url'),
                         'batchActionCsrfToken': actionElement.getAttribute('data-action-csrf-token'),
                     };
                     selectedItems.forEach((item, i) => {
