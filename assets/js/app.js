@@ -301,8 +301,8 @@ const App = (() => {
 
                     const batchFormFields = {
                         'batchActionName': actionElement.getAttribute('data-action-name'),
-                        'entityFqcn': actionElement.getAttribute('data-entity-fqcn'),
                         'batchActionUrl': actionElement.getAttribute('data-action-url'),
+                        'entityFqcn': actionElement.getAttribute('data-entity-fqcn'),
                         'batchActionCsrfToken': actionElement.getAttribute('data-action-csrf-token'),
                     };
                     selectedItems.forEach((item, i) => {
@@ -310,7 +310,9 @@ const App = (() => {
                     });
 
                     const batchForm = document.createElement('form');
-                    for (let fieldName in batchFormFields){
+                    batchForm.method = 'POST';
+                    batchForm.action = actionElement.getAttribute('data-action-url');
+                    for (let fieldName in batchFormFields) {
                         const formField = document.createElement('input');
                         formField.setAttribute('type', 'hidden');
                         formField.setAttribute('name', fieldName);
