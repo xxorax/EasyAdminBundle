@@ -310,8 +310,8 @@ const App = (() => {
                     });
 
                     const batchForm = document.createElement('form');
-                    batchForm.method = 'POST';
-                    batchForm.action = actionElement.getAttribute('data-action-url');
+                    batchForm.setAttribute('method', 'POST');
+                    batchForm.setAttribute('action', actionElement.getAttribute('data-action-url'));
                     for (let fieldName in batchFormFields) {
                         const formField = document.createElement('input');
                         formField.setAttribute('type', 'hidden');
