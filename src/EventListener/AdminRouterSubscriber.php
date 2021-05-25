@@ -151,7 +151,7 @@ class AdminRouterSubscriber implements EventSubscriberInterface
         // if the request is related to a CRUD controller, change the controller to be executed
         if (null !== $crudControllerInstance = $this->getCrudControllerInstance($request)) {
             $symfonyControllerFqcnCallable = [$crudControllerInstance, $request->query->get(EA::CRUD_ACTION)];
-            $symfonyControllerStringCallable = [get_class($crudControllerInstance), $request->query->get(EA::CRUD_ACTION)];
+            $symfonyControllerStringCallable = [\get_class($crudControllerInstance), $request->query->get(EA::CRUD_ACTION)];
 
             // this makes Symfony believe that another controller is being executed
             // (e.g. this is needed for the autowiring of controller action arguments)
